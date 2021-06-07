@@ -1,0 +1,12 @@
+<h1>index</h1>
+
+<ul>
+  <% @post.each do |post| %>
+    <li>
+      <%= post.title %>
+      <%= post.body %>
+    <br>
+    </li>
+  <% end %>
+</ul>
+

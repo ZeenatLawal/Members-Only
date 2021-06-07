@@ -1,0 +1,9 @@
+<%= form_with model: @post, url: posts_path do |form| %>
+    <%= form.label :title, "Title:" %>
+    <%= form.text_field :title, autofocus: true %><br>
+    <br>
+    <%= form.label :body, "Content:" %>
+    <%= form.text_area :body, placeholder: 'Your text goes here'
+   %><br>
+    <%= form.submit "Submit" %>
+  <% end %>
