@@ -2,9 +2,21 @@
 <ul>
   <% @post.each do |post| %>
     <li>
+    <%if user_signed_in? %>
+      <%= current_user.email %>
+      <%end%>
       <%= post.title %>
       <%= post.body %>
     </li>
   <% end %>
 </ul>
+
+<ul>
+    <li>
+      <%= current_user.id %>
+    </li>
+</ul>
+
+<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+
 

@@ -4,6 +4,8 @@
     <br>
     <%= form.label :body, "Content:" %>
     <%= form.text_area :body, placeholder: 'Your text goes here'
-   %><br>
+   %><br><br>
+    <%= form.label :user_id, "User:" %>
+    <%= form.text_field :user_id, value: current_user.id %><br>
     <%= form.submit "Submit" %>
   <% end %>
