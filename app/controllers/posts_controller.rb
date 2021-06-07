@@ -15,11 +15,12 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to :root
     else
-      redirect_to :root
+      redirect_to :new_post
     end
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :body, :user_id)
   end
