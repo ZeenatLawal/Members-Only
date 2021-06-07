@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to :root
     else
-      redirect_to :new_post
+      redirect_to :new_post, notice: "Invalid entry"
     end
   end
 

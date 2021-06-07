@@ -2,9 +2,11 @@
 <ul>
   <% @post.each do |post| %>
     <li>
-      <% if user_signed_in? %>
-        <%=  current_user.email %>
-      <% end %>
+    <% if user_signed_in? %>
+        <% @user.each do |user| %>
+          <%= user.email if user.id == post.user_id %>
+        <% end %>
+    <% end %>
       <%= post.title %>
       <%= post.body %>
     </li>
