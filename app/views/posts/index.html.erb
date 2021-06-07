@@ -3,7 +3,7 @@
   <% @post.each do |post| %>
     <li>
       <% if user_signed_in? %>
-        <%= current_user.email %>
+        <%=  current_user.email %>
       <% end %>
       <%= post.title %>
       <%= post.body %>
