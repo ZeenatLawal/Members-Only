@@ -1,10 +1,15 @@
 class PostsController < ApplicationController
 
-    before_action :authenticate_user!, only: [:index]
+    before_action :authenticate_user!, except: [:index]
 
     def new
         @post = Post.new()
     end
+
+    def index
+        @post = Post.all
+        @user = User.all
+      end
 
     def create
         @post = Post.new(post_params)
