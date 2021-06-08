@@ -1,21 +1,23 @@
-<h1>index</h1>
+<h1 class="text-center">Members Only</h1>
 
-<ul>
-  <% @post.each do |post| %>
-    <li class="list-unstyled">
-      <% if user_signed_in? %>
-      <h3>Author: </h3>
-      <%= post.user.email %>
-      <% end %>
-      <br>
-      <h4>Title: </h4>
-      <%= post.title %>
-      <br>
-      <h4>Post: </h4>
-      <%= post.body %>
-      <br><br><br>
-    </li>
-  <% end %>
-</ul>
+<div class="w-100 d-flex justify-content-center">
+  <ul class="d-inline-flex flex-wrap">
+    <% @post.each do |post| %>
+      <li class="list-unstyled px-5">
+        <% if user_signed_in? %>
+        <h3>Author: </h3>
+        <%= post.user.email %>
+        <% end %>
+        <br><br>
+        <h4>Title: </h4>
+        <%= post.title %>
+        <br><br>
+        <h4>Post: </h4>
+        <%= post.body %>
+        <br><br><br>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
 
