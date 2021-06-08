@@ -2,12 +2,18 @@
 
 <ul>
   <% @post.each do |post| %>
-    <li>
+    <li class="list-unstyled">
       <% if user_signed_in? %>
+      <h3>Author: </h3>
       <%= post.user.email %>
       <% end %>
+      <br>
+      <h4>Title: </h4>
       <%= post.title %>
+      <br>
+      <h4>Post: </h4>
       <%= post.body %>
+      <br><br><br>
     </li>
   <% end %>
 </ul>
