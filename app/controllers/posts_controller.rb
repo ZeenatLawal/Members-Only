@@ -2,16 +2,15 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def index
     @post = Post.all
-    @user = User.all
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to :root
     else
@@ -22,6 +21,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :user_id)
+    params.require(:post).permit(:title, :body)
   end
 end
